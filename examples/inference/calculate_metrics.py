@@ -29,7 +29,7 @@ def main():
     parser.add_argument("--inference_task", default="all", type=str, help="inference task name. 'all' means calculate all task.")
     args = parser.parse_args()
 
-    tokenizer = LlamaTokenizer.from_pretrained(args.model_name_or_path, token="See Your Huggingface Access Tokens in https://huggingface.co/settings/tokens .")
+    tokenizer = LlamaTokenizer.from_pretrained(args.model_name_or_path, token="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")
 
     with open(os.path.join(args.inference_save_dir, "{}_prediction.json".format(args.inference_task)), "r", encoding="utf-8") as fr:
         predictions = json.load(fr)
@@ -50,7 +50,8 @@ def main():
         #         start = ei
         #         break
         final_prediction = "\n".join(prediction[start:])
-        final_prediction = final_prediction[2:]
+        if final_prediction[2:] == "A:":
+            final_prediction = final_prediction[2:]
         # prediction process
         if not args.is_graph_instruction:
             final_prediction = PREDICTION_PROCESSES[task_name](final_prediction, args.model_name_or_path)
@@ -65,7 +66,7 @@ def main():
     
     # print all 
     for task_name, examples in predictions_dict.items():
-        if task_name not in METRICS:
+        if task_name not in METRICS or METRICS[task_name] is None:
             continue
         metric = METRICS[task_name].calculate_metrics(examples, tokenizer=tokenizer)
         # print("task_name: {}, all num: {}, metric: {}".format(task_name, len(examples), metric))
@@ -87,10 +88,12 @@ If calculate the metric for baseline (e.g., llama)
 python3 examples/inference/calculate_metrics.py --model_name_or_path meta-llama/Llama-2-7b-hf --inference_save_dir output/instruction_tuning/llama2/predictions --inference_task xxx
 ```
 
-If calculate the metric for our method (instruction-tuning on graph data)
+If calculate the metric for our method (instruction-tuning on graph data), need add "--is_graph_instruction"
 ```
 python3 examples/inference/calculate_metrics.py --model_name_or_path meta-llama/Llama-2-7b-hf --inference_save_dir output/instruction_tuning/fsdp_peft_flash_1500k/llama2-peft-2epoch/predictions --is_graph_instruction --inference_task xxx
 ```
 
 
+test for gpt3.5 / gpt4
+python3 examples/inference/calculate_metrics.py --is_graph_instruction --inference_save_dir output/openai/gpt4 --inference_task all
 """

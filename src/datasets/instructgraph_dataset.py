@@ -164,4 +164,3 @@ class PreferenceGraphDataset(Dataset):
                 batch[f'{k}_{type_key}'] = tokens
         
         return batch
-    

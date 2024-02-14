@@ -1,9 +1,9 @@
-export CUDA_VISIBLE_DEVICES=4,5,6,7
+export CUDA_VISIBLE_DEVICES=0,1,2,3
 
 # pre-trained peft model in instruction-tuning stage
 PRETRAINED_PEFT=/home/jiw203/wjn/InstructGraph/output/instruction_tuning/fsdp_peft_flash_1500k/vicuna-peft-2epoch
 
-torchrun --nnodes 1 --nproc_per_node 4 --master_port 6023 examples/preference_tuning/llama.py \
+torchrun --nnodes 1 --nproc_per_node 4 --master_port 6015 examples/preference_tuning/llama.py \
 --enable_fsdp \
 --use_peft \
 --context_length 2048 \

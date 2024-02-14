@@ -509,7 +509,7 @@ def align(policy, reference, train_dataloader, eval_dataloader, tokenizer, optim
             
 
                 # ===
-                if aligning_config.save_model and total_steps % 1000 == 0:
+                if aligning_config.save_model and total_steps % 2000 == 0:
                     if aligning_config.enable_fsdp:
                         dist.barrier()
                     if aligning_config.use_peft:
