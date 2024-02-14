@@ -22,6 +22,12 @@ import torch
 from src.datasets import (
     get_instructgraph_dataset,
     get_instructgraph_preference_dataset,
+    get_bbh_dataset,
+    get_mmlu_dataset,
+    get_truthfulqa_dataset,
+    get_halueval_dataset,
+    get_anthropic_hh_dataset,
+    get_planning_dataset,
     get_grammar_dataset,
     get_alpaca_dataset,
     get_samsum_dataset,
@@ -66,10 +72,16 @@ def get_custom_dataset(dataset_config, tokenizer, split: str):
 DATASET_PREPROC = {
     "instructgraph_dataset": partial(get_instructgraph_dataset),
     "instructgraph_preference_dataset": partial(get_instructgraph_preference_dataset),
-    "alpaca_dataset": partial(get_alpaca_dataset),
-    "grammar_dataset": get_grammar_dataset,
-    "samsum_dataset": get_samsum_dataset,
-    "custom_dataset": get_custom_dataset,
+    "big_bench_hard_dataset": partial(get_bbh_dataset),
+    "mmlu_dataset": partial(get_mmlu_dataset),
+    "truthfulqa_dataset": partial(get_truthfulqa_dataset),
+    "halueval_dataset": partial(get_halueval_dataset),
+    "anthropic_hh_dataset": partial(get_anthropic_hh_dataset),
+    "planning_hh_dataset": partial(get_planning_dataset),
+    # "alpaca_dataset": partial(get_alpaca_dataset),
+    # "grammar_dataset": get_grammar_dataset,
+    # "samsum_dataset": get_samsum_dataset,
+    # "custom_dataset": get_custom_dataset,
 }
 
 

@@ -21,6 +21,42 @@ class instructgraph_preference_dataset:
     test_split: str = "data/preference_dataset/released/instructgraph_test_preference_data.json"
     dev_split: str = "data/preference_dataset/released/instructgraph_test_preference_data_small.json"
 
+class big_bench_hard_dataset:
+    dataset: str = "big_bench_hard"
+    train_split: str = ""
+    test_split: str = "data/other_benchmarks/BIG-Bench-Hard/bbh_dataset.json"
+    dev_split: str = ""
+
+class mmlu_dataset:
+    dataset: str = "mmlu"
+    train_split: str = ""
+    test_split: str = "data/other_benchmarks/MMLU/mmlu_dataset.json"
+    dev_split: str = ""
+
+class truthfulqa_dataset:
+    dataset: str = "truthfulqa"
+    train_split: str = ""
+    test_split: str = "data/other_benchmarks/TruthfulQA/truthfulqa_dataset.json"
+    dev_split: str = ""
+
+class halueval_dataset:
+    dataset: str = "halueval"
+    train_split: str = ""
+    test_split: str = "data/other_benchmarks/HaluEval/halueval_dataset.json"
+    dev_split: str = ""
+
+class anthropic_hh_dataset:
+    dataset: str = "anthropic_hh"
+    train_split: str = ""
+    test_split: str = "data/other_benchmarks/Anthropic-hh-rlhf/anthropic_hh_dataset.json"
+    dev_split: str = ""
+
+class planning_dataset:
+    dataset: str = "planning"
+    train_split: str = ""
+    test_split: str = "data/other_benchmarks/Planning/planning_dataset.json"
+    dev_split: str = ""
+
 # @dataclass
 # class samsum_dataset:
 #     dataset: str =  "samsum_dataset"
