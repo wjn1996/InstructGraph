@@ -9,9 +9,9 @@ This repository is implemented for our paper [```InstructGraph: Boosting Large L
 
 ### What's InstructGraph?
 
-**InstructGraph** is a framework for empowering large language models (LLMs) on graph-centric tasks via graph instruction tuning anf preference alignment. We collect 29 standard graph datasets and decompose them into four groups, including graph structure modeling, graph language modeling, graph generation modeling, and graph thought modeling.
+**InstructGraph** is a framework for empowering large language models (LLMs) on graph-centric tasks via graph instruction tuning and preference alignment. We collect 29 standard graph datasets and decompose them into four groups, including graph structure modeling, graph language modeling, graph generation modeling, and graph thought modeling.
 
-To better bridge the gap between textual LLMs with graph, we introduce a **structured format verbalizer**, which aims to transform the graph data into a code-like format. This interface can enable the LLM to reuse the ability of code understanding and generation. In addition, the LLM can generate a graph by outputting a code-like sequence. 
+To better bridge the gap between textual LLMs with the graph data, we introduce a **structured format verbalizer**, which aims to transform the graph data into a code-like format. This interface can enable the LLM to reuse the ability of code understanding and generation. In addition, the LLM can generate a graph by outputting a code-like sequence. 
 
 ![](./images/instructgraph_all_task.png)
 
