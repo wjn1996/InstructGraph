@@ -5,6 +5,8 @@
 
 This repository is implemented for our paper [```InstructGraph: Boosting Large Language Models via Graph-centric Instruction Tuning and Preference Alignment```](https://arxiv.org/pdf/2402.08785.pdf).
 
+🆕 Our paper has been accepted to the Findings of ACL 2024.
+
 ---
 
 ### What's InstructGraph?
