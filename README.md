@@ -31,6 +31,7 @@ More details can be found in our paper.
 
 Download the open-resource [llama2-7b](https://huggingface.co/meta-llama/Llama-2-7b-hf) to a folder, e.g., "./pre-trained-lm/Llama-2-7b-hf".
 
+We release the instruction corpus at: [HuggingFace](https://huggingface.co/datasets/wjn1996/InstructGraph).
 
 **Step1:** Perform graph instruction tuning by llama2-7b with lora:
 ```
